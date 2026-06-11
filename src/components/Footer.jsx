@@ -11,7 +11,7 @@ export default function Footer() {
               Job
             </h2>
 
-            <p className="text-sm leading-6 max-w-xs">
+            <p className="text-sm leading-6 max-w-xs text-white">
               Quis enim pellentesque viverra tellus eget malesuada
               facilisis. Congue nibh vivamus aliquet nunc mauris.
             </p>
@@ -23,7 +23,7 @@ export default function Footer() {
               Company
             </h3>
 
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-2 text-sm text-white">
               <li><a href="#">About Us</a></li>
               <li><a href="#">Our Team</a></li>
               <li><a href="#">Partners</a></li>
@@ -38,7 +38,7 @@ export default function Footer() {
               Job Categories
             </h3>
 
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-2 text-sm text-white">
               <li>Telecommunications</li>
               <li>Hotels & Tourism</li>
               <li>Construction</li>
@@ -53,7 +53,7 @@ export default function Footer() {
               Newsletter
             </h3>
 
-            <p className="text-sm mb-3 leading-6">
+            <p className="text-sm mb-3 leading-6 text-white">
               Eu nunc pretium vitae platea. Non netus elementum vulputate.
             </p>
 
@@ -76,10 +76,10 @@ export default function Footer() {
               <button
                 className="
                   w-full
-                  bg-emerald-500
+                  bg-teal-500
                   text-white
                   font-medium
-                  py-3
+                  py-2
                   rounded-xl
                 "
               >
@@ -90,18 +90,18 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="mt-8">
+        <div className="mt-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-3 text-sm">
-            <p>
+            <p className="text-white">
               © Copyright Job Portal 2024. Designed by Figma.guru
             </p>
 
             <div className="flex gap-5">
-              <a href="#" className="underline">
+              <a href="#" className="underline text-white">
                 Privacy Policy
               </a>
 
-              <a href="#" className="underline">
+              <a href="#" className="underline text-white">
                 Terms & Conditions
               </a>
             </div>

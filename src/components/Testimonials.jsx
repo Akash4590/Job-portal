@@ -32,26 +32,37 @@ export default function Testimonials() {
     <section className="bg-emerald-50 py-20 px-4 md:px-8">
       <div className="max-w-6xl mx-auto">
         {/* Heading */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-900">
+        <div className="text-center mb-14">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
             Testimonials from Our Customers
           </h2>
 
-          <p className="text-gray-500 mt-3 max-w-2xl mx-auto">
+          <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
             At eu lobortis pretium tincidunt amet lacus ut aenean aliquet.
             Blandit a massa elementum id.
           </p>
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
           {testimonials.map((item, i) => (
             <div
               key={i}
-              className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300"
+              className="
+                bg-white
+                rounded-3xl
+                p-7
+                shadow-sm
+                hover:shadow-lg
+                transition-all
+                duration-300
+                flex
+                flex-col
+                min-h-[360px]
+              "
             >
               {/* Stars */}
-              <div className="flex gap-1 text-yellow-400 mb-4">
+              <div className="flex gap-1 text-yellow-400 mb-5">
                 {[...Array(5)].map((_, idx) => (
                   <FaStar key={idx} size={14} />
                 ))}
@@ -62,13 +73,22 @@ export default function Testimonials() {
                 {item.title}
               </h3>
 
-              {/* Review Text */}
-              <p className="text-gray-500 text-sm leading-6 italic mb-8">
+              {/* Review */}
+              <p className="text-gray-500 text-sm leading-7 italic">
                 {item.text}
               </p>
 
-              {/* Footer */}
-              <div className="flex items-end justify-between">
+              {/* Bottom Section */}
+              <div className="mt-auto pt-6">
+                {/* Quote Icon */}
+                <div className="flex justify-end mb-3">
+                  <FaQuoteRight
+                    size={24}
+                    className="text-teal-500 opacity-80"
+                  />
+                </div>
+
+                {/* Profile */}
                 <div className="flex items-center gap-3">
                   <img
                     src={item.image}
@@ -80,17 +100,12 @@ export default function Testimonials() {
                     <h4 className="font-semibold text-gray-900 text-sm">
                       {item.name}
                     </h4>
+
                     <p className="text-gray-400 text-xs">
                       {item.role}
                     </p>
                   </div>
                 </div>
-
-                {/* Quote Icon */}
-                <FaQuoteRight
-                  size={28}
-                  className="text-emerald-500 opacity-80"
-                />
               </div>
             </div>
           ))}

@@ -54,37 +54,54 @@ const categories = [
 
 export default function Categories() {
   return (
-    <section className="bg-blue-50 py-20">
-      <div className="max-w-7xl mx-auto px-4">
+    <section className="bg-white py-20">
+      <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12">
         {/* Heading */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-900">
+        <div className="text-center mb-14">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
             Browse by Category
           </h2>
-          <p className="text-gray-500 mt-3 max-w-2xl mx-auto">
+
+          <p className="text-gray-500 mt-4 max-w-2xl mx-auto leading-relaxed">
             At eu lobortis pretium tincidunt amet lacus ut aenean aliquet.
             Blandit a massa elementum id scelerisque rhoncus.
           </p>
         </div>
 
-        {/* Cards */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {categories.map((cat, i) => (
+        {/* Category Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {categories.map((cat, index) => (
             <div
-              key={i}
-              className="bg-white h-52 rounded-2xl p-6 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+              key={index}
+              className="
+                bg-white
+                h-52
+                rounded-3xl
+                p-6
+                flex
+                flex-col
+                items-center
+                justify-center
+                text-center
+                shadow-[0_4px_20px_rgba(0,0,0,0.05)]
+                hover:-translate-y-1
+                hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)]
+                transition-all
+                duration-300
+                cursor-pointer
+              "
             >
               {/* Icon */}
               <div className="mb-5">{cat.icon}</div>
 
               {/* Title */}
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-lg md:text-xl font-semibold text-gray-900">
                 {cat.name}
               </h3>
 
               {/* Jobs Badge */}
               <div className="mt-4">
-                <span className="inline-flex items-center bg-blue-100 text-teal-600 text-xs px-3 py-1 rounded-md">
+                <span className="inline-flex items-center bg-teal-50 text-teal-600 text-xs font-medium px-3 py-1.5 rounded-md">
                   {cat.jobs}
                 </span>
               </div>

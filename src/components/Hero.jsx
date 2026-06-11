@@ -9,84 +9,109 @@ import {
 
 function Hero() {
   return (
-    <section className="h-screen bg-cover bg-center relative overflow-hidden">
+    <section className="relative min-h-screen overflow-hidden">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d')]
-        bg-cover bg-center blur-md scale-110"
-      ></div>
+        bg-cover bg-center blur-sm scale-110"
+      />
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/70"></div>
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black/70" />
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-white px-4 pt-24">
+      <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-4 pt-24 pb-10 text-white sm:pt-28">
         {/* Heading */}
-        <h1 className="text-4xl md:text-6xl font-bold mb-4 text-center">
+        <h1 className="max-w-4xl text-center text-3xl font-bold leading-tight sm:text-4xl md:text-5xl lg:text-6xl">
           Find Your Dream Job Today!
         </h1>
 
-        <p className="text-gray-300 mb-8 text-center max-w-xl text-sm md:text-base">
+        {/* Subtitle */}
+        <p className="mt-4 mb-8 max-w-2xl px-2 text-center text-sm text-gray-300 sm:text-base">
           Connecting Talent with Opportunity: Your Gateway to Career Success
         </p>
 
         {/* Search Box */}
-        <div className="bg-white rounded-lg flex flex-col md:flex-row gap-3 p-4 w-full max-w-3xl">
-          {/* Job Title */}
-          <div className="flex items-center gap-2 flex-1 px-4 border-b md:border-b-0 md:border-r border-gray-200">
-            <Briefcase size={18} className="text-gray-400" />
-            <input
-              className="w-full py-2 outline-none text-black"
-              placeholder="Job Title"
-            />
-          </div>
+        <div className="w-full max-w-5xl rounded-2xl bg-white p-3 shadow-2xl sm:p-4">
+          <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:gap-0">
+            {/* Job Title */}
+            <div className="flex h-12 flex-1 items-center gap-3 rounded-xl border border-gray-200 px-4 lg:rounded-none lg:border-0 lg:border-r">
+              <Briefcase
+                size={18}
+                className="flex-shrink-0 text-gray-400"
+              />
+              <input
+                type="text"
+                placeholder="Job Title"
+                className="w-full bg-transparent text-sm text-black outline-none"
+              />
+            </div>
 
-          {/* Location */}
-          <div className="flex items-center gap-2 px-4 border-b md:border-b-0 md:border-r border-gray-200">
-            <MapPin size={18} className="text-gray-400" />
-            <select className="outline-none text-black py-3 w-full bg-transparent">
-              <option>Select Location</option>
-            </select>
-          </div>
+            {/* Mobile: Location + Category in one row */}
+            <div className="flex gap-3 lg:flex-1 lg:gap-0">
+              {/* Location */}
+              <div className="flex h-12 flex-1 items-center gap-2 rounded-xl border border-gray-200 px-3 lg:rounded-none lg:border-0 lg:border-r lg:px-4">
+                <MapPin
+                  size={18}
+                  className="flex-shrink-0 text-gray-400"
+                />
+                <select className="w-full bg-transparent text-sm text-black outline-none">
+                  <option>Location</option>
+                  <option>Remote</option>
+                  <option>USA</option>
+                  <option>UK</option>
+                </select>
+              </div>
 
-          {/* Category */}
-          <div className="flex items-center gap-2 px-4 border-b md:border-b-0 md:border-r border-gray-200">
-            <Layers size={18} className="text-gray-400" />
-            <select className="outline-none text-black py-3 w-full bg-transparent">
-              <option>Select Category</option>
-            </select>
-          </div>
+              {/* Category */}
+              <div className="flex h-12 flex-1 items-center gap-2 rounded-xl border border-gray-200 px-3 lg:rounded-none lg:border-0 lg:border-r lg:px-4">
+                <Layers
+                  size={18}
+                  className="flex-shrink-0 text-gray-400"
+                />
+                <select className="w-full bg-transparent text-sm text-black outline-none">
+                  <option>Category</option>
+                  <option>Development</option>
+                  <option>Design</option>
+                  <option>Marketing</option>
+                </select>
+              </div>
+            </div>
 
-          {/* Button */}
-          <button className="bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-3 rounded-md flex items-center justify-center gap-2 transition duration-300">
-            <Search size={18} />
-            Search Job
-          </button>
+            {/* Search Button */}
+            <button className="flex h-12 items-center justify-center gap-2 rounded-xl bg-emerald-500 px-6 text-sm font-medium text-white transition hover:bg-emerald-600 lg:ml-3 lg:w-auto whitespace-nowrap">
+              <Search size={18} />
+              Search Job
+            </button>
+          </div>
         </div>
 
         {/* Stats */}
-        <div className="flex flex-wrap justify-center gap-6 md:gap-10 mt-12">
-          <div className="flex items-center gap-3">
+        <div className="mt-10 grid w-full max-w-2xl grid-cols-2 gap-5 text-center sm:mt-12 sm:gap-8 md:grid-cols-3">
+          {/* Jobs */}
+          <div className="flex items-center justify-center gap-3 rounded-xl bg-white/5 p-4 backdrop-blur-sm">
             <Briefcase className="text-emerald-500" />
-            <div>
-              <h3 className="font-bold">25,850</h3>
-              <p className="text-sm text-gray-400">Jobs</p>
+            <div className="text-left">
+              <h3 className="text-lg font-bold">25,850</h3>
+              <p className="text-sm text-gray-300">Jobs</p>
             </div>
           </div>
 
-          <div className="flex items-center gap-3">
+          {/* Candidates */}
+          <div className="flex items-center justify-center gap-3 rounded-xl bg-white/5 p-4 backdrop-blur-sm">
             <Users className="text-emerald-500" />
-            <div>
-              <h3 className="font-bold">10,250</h3>
-              <p className="text-sm text-gray-400">Candidates</p>
+            <div className="text-left">
+              <h3 className="text-lg font-bold">10,250</h3>
+              <p className="text-sm text-gray-300">Candidates</p>
             </div>
           </div>
 
-          <div className="flex items-center gap-3">
+          {/* Companies */}
+          <div className="col-span-2 flex items-center justify-center gap-3 rounded-xl bg-white/5 p-4 backdrop-blur-sm md:col-span-1">
             <Building2 className="text-emerald-500" />
-            <div>
-              <h3 className="font-bold">18,400</h3>
-              <p className="text-sm text-gray-400">Companies</p>
+            <div className="text-left">
+              <h3 className="text-lg font-bold">18,400</h3>
+              <p className="text-sm text-gray-300">Companies</p>
             </div>
           </div>
         </div>

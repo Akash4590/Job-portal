@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Briefcase, Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,12 +22,16 @@ function Navbar() {
 
         {/* Desktop Navigation */}
         <ul className="hidden md:flex items-center gap-8 text-sm font-medium">
-          <li className="cursor-pointer hover:text-emerald-400 transition-colors duration-300">
-            Home
-          </li>
-          <li className="cursor-pointer hover:text-emerald-400 transition-colors duration-300">
-            Jobs
-          </li>
+            <Link to="/">
+  <li className="cursor-pointer hover:text-emerald-400 transition-colors duration-300">
+    Home
+  </li>
+</Link>
+          <Link to="/jobs">
+  <li className="cursor-pointer hover:text-emerald-400 transition-colors duration-300">
+    Jobs
+  </li>
+</Link>
           <li className="cursor-pointer hover:text-emerald-400 transition-colors duration-300">
             About Us
           </li>
@@ -46,7 +51,7 @@ function Navbar() {
 
           <button
             type="button"
-            className="cursor-pointer bg-emerald-500 hover:bg-emerald-600 px-5 py-2.5 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
+            className="cursor-pointer bg-teal-500 hover:bg-emerald-600 px-5 py-2.5 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
           >
             Register
           </button>
@@ -65,12 +70,16 @@ function Navbar() {
       {isOpen && (
         <div className="md:hidden bg-black/90 backdrop-blur-md">
           <ul className="flex flex-col items-center gap-6 py-6 text-base font-medium">
-            <li className="cursor-pointer hover:text-emerald-400 transition-colors duration-300">
-              Home
-            </li>
-            <li className="cursor-pointer hover:text-emerald-400 transition-colors duration-300">
-              Jobs
-            </li>
+                 <Link to="/">
+  <li className="cursor-pointer hover:text-emerald-400 transition-colors duration-300">
+    Home
+  </li>
+</Link>
+           <Link to="/jobs">
+  <li className="cursor-pointer hover:text-emerald-400 transition-colors duration-300">
+    Jobs
+  </li>
+</Link>
             <li className="cursor-pointer hover:text-emerald-400 transition-colors duration-300">
               About Us
             </li>
@@ -83,7 +92,7 @@ function Navbar() {
                 Login
               </button>
 
-              <button className="bg-emerald-500 hover:bg-emerald-600 py-2 rounded-lg transition">
+              <button className="bg-teal-500 hover:bg-emerald-600 py-2 rounded-lg transition">
                 Register
               </button>
             </div>
