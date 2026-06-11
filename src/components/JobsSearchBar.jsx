@@ -41,7 +41,7 @@ const JobsSearchBar = ({
     categories[0];
 
   return (
-    <section className="mt-16 md:mt-24 mb-10 md:mb-16 px-4">
+    <section className="mt-20 md:mt-24 mb-10 md:mb-16 px-4">
       <div className="max-w-3xl mx-auto">
         <div className="bg-white rounded-2xl shadow-md p-3 sm:p-4">
           <div className="flex items-center gap-2">
